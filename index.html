@@ -3,56 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vedant Bajaj - Professional Profile</title>
+    <title>Vedant Bajaj - Modern Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #eef2f6; /* Lighter, cooler grey background */
+            background-color: #1a202c; /* Dark background similar to examples */
             line-height: 1.6;
+            color: #e2e8f0; /* Light text for contrast */
+            scroll-behavior: smooth; /* Smooth scrolling for nav links */
         }
-        /* Custom scrollbar for better aesthetics */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #dce0e6;
+            background: #2d3748;
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #a0aec0; /* Medium grey */
+            background: #4a5568;
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #718096; /* Darker grey */
+            background: #64748b;
         }
 
-        /* Subtle hover effect for sections */
-        section {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        /* Gradient for prominent text/buttons */
+        .gradient-bg {
+            background: linear-gradient(to right, #6366f1, #3b82f6); /* Slightly adjusted gradient */
         }
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Gradient for header text */
         .gradient-text {
-            background: linear-gradient(to right, #4a90e2, #6a7ee7);
+            background: linear-gradient(to right, #6366f1, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        /* Section Reveal Animation */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card-like styling for sections */
+        .profile-card {
+            background-color: #2d3748; /* Darker card background */
+            border-radius: 1rem; /* rounded-2xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1); /* Darker shadow */
+            padding: 2.5rem; /* p-10 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #4a5568; /* Subtle border */
+        }
+        .profile-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
         }
 
         /* Skill tag animations */
         .skill-tag {
             transition: all 0.3s ease;
-            animation: fadeInScale 0.5s ease-out forwards;
+            animation: fadeInScale 0.5s ease-out forwards; /* Apply animation */
             opacity: 0; /* Start hidden for fade-in */
         }
         .skill-tag:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Keyframes for fade-in and scale animation */
@@ -67,7 +88,7 @@
             }
         }
 
-        /* Delay animation for skill tags */
+        /* Delay animation for skill tags (adjust as needed for more tags) */
         .skill-tag:nth-child(1) { animation-delay: 0.1s; }
         .skill-tag:nth-child(2) { animation-delay: 0.2s; }
         .skill-tag:nth-child(3) { animation-delay: 0.3s; }
@@ -77,72 +98,130 @@
         .skill-tag:nth-child(7) { animation-delay: 0.7s; }
         .skill-tag:nth-child(8) { animation-delay: 0.8s; }
         .skill-tag:nth-child(9) { animation-delay: 0.9s; }
-        /* Add more as needed for other skill categories */
+        .skill-tag:nth-child(10) { animation-delay: 1.0s; }
+        .skill-tag:nth-child(11) { animation-delay: 1.1s; }
+        .skill-tag:nth-child(12) { animation-delay: 1.2s; }
+        .skill-tag:nth-child(13) { animation-delay: 1.3s; }
+        .skill-tag:nth-child(14) { animation-delay: 1.4s; }
+        .skill-tag:nth-child(15) { animation-delay: 1.5s; }
+        .skill-tag:nth-child(16) { animation-delay: 1.6s; }
+        .skill-tag:nth-child(17) { animation-delay: 1.7s; }
+        .skill-tag:nth-child(18) { animation-delay: 1.8s; }
+        .skill-tag:nth-child(19) { animation-delay: 1.9s; }
+        .skill-tag:nth-child(20) { animation-delay: 2.0s; }
+        .skill-tag:nth-child(21) { animation-delay: 2.1s; }
+        .skill-tag:nth-child(22) { animation-delay: 2.2s; }
+        .skill-tag:nth-child(23) { animation-delay: 2.3s; }
+        .skill-tag:nth-child(24) { animation-delay: 2.4s; }
+        .skill-tag:nth-child(25) { animation-delay: 2.5s; }
+        .skill-tag:nth-child(26) { animation-delay: 2.6s; }
+        .skill-tag:nth-child(27) { animation-delay: 2.7s; }
+        .skill-tag:nth-child(28) { animation-delay: 2.8s; }
+
+        /* Custom styling for navigation links to match examples */
+        .nav-link {
+            color: #a0aec0; /* Lighter gray for nav links */
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 0.25rem;
+        }
+        .nav-link:hover {
+            color: #6366f1; /* Purple on hover */
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #6366f1; /* Underline color */
+            transition: width 0.3s ease-out;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
-<body class="antialiased text-gray-800">
-    <div class="container mx-auto p-4 sm:p-6 lg:p-10">
-        <header class="bg-white shadow-xl rounded-2xl p-6 mb-10 md:flex md:items-center md:justify-between transform transition-all duration-300 hover:scale-[1.005]">
-            <div class="text-center md:text-left">
-                <h1 class="text-5xl font-extrabold mb-2 gradient-text">Vedant Bajaj</h1>
-                <p class="text-2xl text-gray-700">Software Engineer | Machine Learning & AI Enthusiast</p>
-            </div>
-            <div class="mt-6 md:mt-0 text-center md:text-right space-y-3">
-                <p class="text-gray-700 text-lg"><a href="mailto:Vedant.Bajaj@UTDallas.edu" class="hover:underline text-blue-600 hover:text-blue-800 transition duration-300">Vedant.Bajaj@UTDallas.edu</a></p>
-                <p class="text-gray-700 text-lg">(945)-291-0320</p>
-                <p class="text-gray-700 text-lg"><a href="https://www.linkedin.com/in/vedant-bajaj99" target="_blank" rel="noopener noreferrer" class="hover:underline text-blue-600 hover:text-blue-800 transition duration-300">LinkedIn Profile</a></p>
-                <p class="text-gray-700 text-lg">Dallas, TX</p>
+<body class="antialiased">
+
+    <nav class="sticky top-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-md shadow-lg py-4 px-6 md:px-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-3xl font-extrabold text-white">VB.</a> <div class="space-x-8 hidden md:flex items-center">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="https://www.linkedin.com/in/vedant-bajaj99" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
                 <a href="Vedant_Bajaj_resume.pdf" download="Vedant_Bajaj_resume.pdf"
-                   class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 mt-4">
-                    Download Resume
+                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    Resume
                 </a>
             </div>
-        </header>
+            </div>
+    </nav>
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-10">
+
+        <section id="hero" class="text-center py-24 md:py-32 px-8 mb-10 reveal-section">
+            <p class="text-xl md:text-2xl text-blue-400 font-semibold mb-4">Hi, my name is</p>
+            <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-tight mb-6">Vedant Bajaj.</h1>
+            <p class="text-3xl md:text-4xl font-bold gradient-text max-w-4xl mx-auto mb-8">
+                I build intelligent systems for the web and beyond.
+            </p>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+                I'm a Computer Engineering Master's student specializing in Machine Learning and AI, passionate about crafting robust software solutions and automating complex challenges.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#projects" class="gradient-bg text-white font-bold py-4 px-10 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl text-lg">
+                    View My Work
+                </a>
+                <a href="#contact"
+                   class="bg-gray-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gray-600 hover:shadow-xl text-lg">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
 
         <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 space-y-8">
-                <section id="about" class="bg-white shadow-lg rounded-2xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-5 border-b-4 border-blue-500 pb-3">About Me</h2>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        I am a passionate Software Engineer currently pursuing a Master of Science in Computer Engineering at the University of Texas at Dallas (Aug 2024 - May 2026), holding a GPA of 3.6. I previously earned my Bachelor of Technology in Computer Engineering from the University of Pune (Aug 2018 - May 2022) with a GPA of 3.7.
+                <section id="about" class="profile-card reveal-section">
+                    <h2 class="text-3xl font-bold text-blue-400 mb-5 border-b-4 border-blue-600 pb-3">About Me</h2>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                        Greetings! I'm Vedant Bajaj, a Master's student in Computer Engineering at the University of Texas at Dallas. My academic journey began with a Bachelor of Technology in Computer Engineering from the University of Pune. I'm driven by a profound interest in how technology can simplify, automate, and enhance our lives.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        My expertise lies in Machine Learning, AI, and backend development. I thrive on automating processes, optimizing systems, and developing intelligent solutions that drive efficiency and improve decision-making. I am always eager to learn new technologies and apply my skills to challenging problems.
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        My professional experience as a Software Engineer has equipped me with practical skills in Machine Learning, AI, and robust backend development. I've had the privilege of working on projects that involve automating document processing, building speech-to-text systems, and optimizing database performance. I believe in crafting intelligent solutions that not only solve complex problems but also deliver tangible value.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        Currently, I'm diving deeper into advanced concepts like Machine Learning, Statistical Methods in ML/AI, and Applied Data Structures and Algorithms at UTD. My goal is to leverage cutting-edge technology to build innovative applications that make a real impact.
                     </p>
                 </section>
 
-                <section id="education" class="bg-white shadow-lg rounded-2xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-5 border-b-4 border-blue-500 pb-3">Education</h2>
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-xl font-semibold text-gray-900">Master of Science in Computer Engineering</h3>
-                        <p class="text-md text-gray-600">University of Texas at Dallas | Aug 2024 - May 2026</p>
-                        <p class="text-md text-gray-700">GPA: 3.6</p>
-                        <p class="text-md text-gray-700">Coursework: Machine Learning, Statistical Methods in ML/AI, Applied Data Structures and Algorithms</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-900">Bachelor of Technology in Computer Engineering</h3>
-                        <p class="text-md text-gray-600">University of Pune | Aug 2018 - May 2022</p>
-                        <p class="text-md text-gray-700">GPA: 3.7</p>
-                        <p class="text-md text-gray-700">Coursework: Data Structures and Algorithms, Object Oriented Programming, Database System, Machine Learning</p>
-                    </div>
-                </section>
+                <section id="experience" class="profile-card reveal-section">
+                    <h2 class="text-3xl font-bold text-blue-400 mb-5 border-b-4 border-blue-600 pb-3">Professional Experience</h2>
 
-                <section id="experience" class="bg-white shadow-lg rounded-2xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-5 border-b-4 border-blue-500 pb-3">Professional Experience</h2>
-
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-xl font-semibold text-gray-900">Software Engineer, Rabbit and Tortoise Technology, India</h3>
-                        <p class="text-md text-gray-600 mb-2">Nov 2022 - Sep 2023</p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2 pl-5">
-                            <li><strong>Automated Document Processing System:</strong> Implemented an OCR pipeline using Python, OpenCV, and PyTesseract, achieving 95% text detection accuracy and reducing manual processing time by 50%. Applied advanced image preprocessing, reducing noise by 90% and improving text extraction efficiency.</li>
-                            <li><strong>Intelligent Speech-to-Text Grocery Management System:</strong> Developed an end-to-end speech recognition system using Google Speech-to-Text API and Python, achieving 98% transcription accuracy. Engineered a regex-based text processing system to extract items, quantities, and prices from transcribed text, automatically generating structured shopping lists with 95% accuracy.</li>
+                    <div class="mb-6 pb-4 border-b border-gray-600 last:border-b-0">
+                        <h3 class="text-xl font-semibold text-white">Software Engineer, Rabbit and Tortoise Technology, India</h3>
+                        <p class="text-md text-gray-400 mb-2">Nov 2022 - Sep 2023</p>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-3">
+                            At Rabbit and Tortoise Technology, I gained hands-on experience in developing intelligent systems that streamlined operations and improved data accuracy. My roles involved leveraging advanced technologies to build robust and efficient software solutions.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 pl-5">
+                            <li>Automated Document Processing System: Implemented an OCR pipeline using Python, OpenCV, and PyTesseract, achieving 95% text detection accuracy and reducing manual processing time by 50%. Applied advanced image preprocessing, reducing noise by 90% and improving text extraction efficiency.</li>
+                            <li>Intelligent Speech-to-Text Grocery Management System: Developed an end-to-end speech recognition system using Google Speech-to-Text API and Python, achieving 98% transcription accuracy. Engineered regex-based text processing system to extract items, quantities, and prices from transcribed text, automatically generating structured shopping lists with 95% accuracy.</li>
                         </ul>
                     </div>
 
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-xl font-semibold text-gray-900">Software Engineer Intern, Bizsol IT Services, India</h3>
-                        <p class="text-md text-gray-600 mb-2">Aug 2021 - Dec 2021</p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2 pl-5">
+                    <div class="mb-6 pb-4 border-b border-gray-600 last:border-b-0">
+                        <h3 class="text-xl font-semibold text-white">Software Engineer Intern, Bizsol IT Services, India</h3>
+                        <p class="text-md text-gray-400 mb-2">Aug 2021 - Dec 2021</p>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-3">
+                            During my internship at Bizsol IT Services, I focused on data integration and visualization, contributing to systems that significantly cut down manual effort and enhanced business intelligence.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 pl-5">
                             <li>Developed a SQL Server-based data integration system, reducing manual reconciliation time by 60%.</li>
                             <li>Optimized database queries and implemented indexing strategies, improving query performance by 40%.</li>
                             <li>Created interactive dashboards for data visualization, enhancing business intelligence capabilities.</li>
@@ -150,105 +229,203 @@
                     </div>
                 </section>
 
-                <section id="projects" class="bg-white shadow-lg rounded-2xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-5 border-b-4 border-blue-500 pb-3">Projects</h2>
+                <section id="projects" class="profile-card reveal-section">
+                    <h2 class="text-3xl font-bold text-blue-400 mb-5 border-b-4 border-blue-600 pb-3">Key Projects</h2>
 
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-xl font-semibold text-gray-900">Data Analysis Pipeline, University of Pune, India</h3>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2 pl-5">
+                    <div class="mb-6 pb-4 border-b border-gray-600 last:border-b-0">
+                        <h3 class="text-xl font-semibold text-white">Data Analysis Pipeline, University of Pune, India</h3>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-3">
+                            This project involved building a robust data analysis pipeline, demonstrating my expertise in handling large datasets and ensuring data integrity and accuracy through automated processes.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 pl-5">
                             <li>Designed ETL pipelines using Python, NumPy, and Pandas for processing large-scale datasets.</li>
                             <li>Applied automated data cleaning workflows, reducing preparation time by 50% and improving data reliability.</li>
                             <li>Created data transformation pipelines for complex analytics, resulting in 30% improved decision accuracy.</li>
                         </ul>
-                    </div>
+                        </div>
 
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-xl font-semibold text-gray-900">Face Mask Detection for Mask Compliance Monitoring System, University of Pune, India</h3>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2 pl-5">
-                            <li>Engineered a real-time mask detection system utilizing OpenCV and MobileNetV2, achieving 96% accuracy.</li>
+                    <div class="mb-6 pb-4 border-b border-gray-600 last:border-b-0">
+                        <h3 class="text-xl font-semibold text-white">Face Mask Detection for Mask Compliance Monitoring System, University of Pune, India</h3>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-3">
+                            A real-time computer vision project focused on public safety, showcasing my skills in deep learning and real-world application of AI for compliance monitoring.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 pl-5">
+                            <li>Engineered real-time mask detection system utilizing OpenCV and MobileNetV2, achieving 96% accuracy.</li>
                             <li>Implemented Haar Cascade algorithms for facial recognition and deep learning models for mask classification.</li>
                         </ul>
-                    </div>
+                        </div>
 
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-xl font-semibold text-gray-900">Smart Glasses for Enhanced Driving Safety, University of Pune, India</h3>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2 pl-5">
+                    <div class="mb-6 pb-4 border-b border-gray-600 last:border-b-0">
+                        <h3 class="text-xl font-semibold text-white">Smart Glasses for Enhanced Driving Safety, University of Pune, India</h3>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-3">
+                            An innovative hardware-software integration project that demonstrates my ability to develop practical solutions for everyday challenges, enhancing safety through technology.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 pl-5">
                             <li>Developed smart glasses with Arduino Uno, GSM, GPS, and OLED for real-time navigation and alerts.</li>
                             <li>Improved system responsiveness by 20% and achieved 98% message delivery through optimized communication.</li>
                         </ul>
-                    </div>
+                        </div>
                 </section>
             </div>
 
             <div class="lg:col-span-1 space-y-8">
-                <section id="skills" class="bg-white shadow-lg rounded-2xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-5 border-b-4 border-blue-500 pb-3">Technical Skills</h2>
+                <section id="skills" class="profile-card reveal-section">
+                    <h2 class="text-3xl font-bold text-blue-400 mb-5 border-b-4 border-blue-600 pb-3">Technical Skills</h2>
                     <div class="space-y-5">
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Programming Languages:</h3>
+                            <h3 class="text-xl font-semibold text-white mb-3">Programming Languages:</h3>
                             <div class="flex flex-wrap gap-3">
-                                <span class="skill-tag bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Python</span>
-                                <span class="skill-tag bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">C++</span>
-                                <span class="skill-tag bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Java</span>
+                                <span class="skill-tag bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Python</span>
+                                <span class="skill-tag bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">C++</span>
+                                <span class="skill-tag bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Java</span>
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Machine Learning and AI:</h3>
+                            <h3 class="text-xl font-semibold text-white mb-3">Machine Learning and AI:</h3>
                             <div class="flex flex-wrap gap-3">
-                                <span class="skill-tag bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">TensorFlow</span>
-                                <span class="skill-tag bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Scikit-learn</span>
-                                <span class="skill-tag bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Computer Vision</span>
-                                <span class="skill-tag bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">NLP</span>
-                                <span class="skill-tag bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">OpenCV</span>
-                                <span class="skill-tag bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Pytesseract</span>
-                                <span class="skill-tag bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">NumPy</span>
-                                <span class="skill-tag bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Pandas</span>
-                                <span class="skill-tag bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Data Analysis</span>
+                                <span class="skill-tag bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">TensorFlow</span>
+                                <span class="skill-tag bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Scikit-learn</span>
+                                <span class="skill-tag bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Computer Vision</span>
+                                <span class="skill-tag bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">NLP</span>
+                                <span class="skill-tag bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">OpenCV</span>
+                                <span class="skill-tag bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Pytesseract</span>
+                                <span class="skill-tag bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">NumPy</span>
+                                <span class="skill-tag bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Pandas</span>
+                                <span class="skill-tag bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Data Analysis</span>
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Software Development:</h3>
+                            <h3 class="text-xl font-semibold text-white mb-3">Software Development:</h3>
                             <div class="flex flex-wrap gap-3">
-                                <span class="skill-tag bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Object-Oriented Design</span>
-                                <span class="skill-tag bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">REST APIs</span>
-                                <span class="skill-tag bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Version Control (Git)</span>
-                                <span class="skill-tag bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Agile Development</span>
+                                <span class="skill-tag bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Object-Oriented Design</span>
+                                <span class="skill-tag bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">REST APIs</span>
+                                <span class="skill-tag bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Version Control (Git)</span>
+                                <span class="skill-tag bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Agile Development</span>
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Web Development:</h3>
+                            <h3 class="text-xl font-semibold text-white mb-3">Web Development:</h3>
                             <div class="flex flex-wrap gap-3">
-                                <span class="skill-tag bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Django</span>
-                                <span class="skill-tag bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">API Development</span>
-                                <span class="skill-tag bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Backend Development</span>
-                                <span class="skill-tag bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Web Scraping</span>
-                                <span class="skill-tag bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">HTML</span>
-                                <span class="skill-tag bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">CSS</span>
+                                <span class="skill-tag bg-yellow-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Django</span>
+                                <span class="skill-tag bg-yellow-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">API Development</span>
+                                <span class="skill-tag bg-yellow-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Backend Development</span>
+                                <span class="skill-tag bg-yellow-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">Web Scraping</span>
+                                <span class="skill-tag bg-yellow-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">HTML</span>
+                                <span class="skill-tag bg-yellow-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">CSS</span>
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Database Management:</h3>
+                            <h3 class="text-xl font-semibold text-white mb-3">Database Management:</h3>
                             <div class="flex flex-wrap gap-3">
-                                <span class="skill-tag bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">MySQL</span>
-                                <span class="skill-tag bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">SQL Server</span>
+                                <span class="skill-tag bg-red-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">MySQL</span>
+                                <span class="skill-tag bg-red-700 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">SQL Server</span>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section id="achievements" class="bg-white shadow-lg rounded-2xl p-8">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-5 border-b-4 border-blue-500 pb-3">Leadership & Achievements</h2>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2 pl-5">
+                <section id="education" class="profile-card reveal-section">
+                    <h2 class="text-3xl font-bold text-blue-400 mb-5 border-b-4 border-blue-600 pb-3">Education</h2>
+                    <div class="mb-6 pb-4 border-b border-gray-600 last:border-b-0">
+                        <h3 class="text-xl font-semibold text-white">Master of Science in Computer Engineering</h3>
+                        <p class="text-md text-gray-400">University of Texas at Dallas | Aug 2024 - May 2026</p>
+                        <p class="text-md text-gray-300">GPA: 3.6</p>
+                        <p class="text-md text-gray-300">Coursework: Machine Learning, Statistical Methods in ML/AI, Applied Data Structures and Algorithms</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white">Bachelor of Technology in Computer Engineering</h3>
+                        <p class="text-md text-gray-400">University of Pune | Aug 2018 - May 2022</p>
+                        <p class="text-md text-gray-300">GPA: 3.7</p>
+                        <p class="text-md text-gray-300">Coursework: Data Structures and Algorithms, Object Oriented Programming, Database System, Machine Learning</p>
+                    </div>
+                </section>
+
+                <section id="achievements" class="profile-card reveal-section">
+                    <h2 class="text-3xl font-bold text-blue-400 mb-5 border-b-4 border-blue-600 pb-3">Leadership & Achievements</h2>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2 pl-5">
                         <li><strong>Winner of Gandharva Hackathon:</strong> Secured first place by developing innovative assistive Smart Glasses.</li>
                     </ul>
+                </section>
+
+                <section id="contact" class="profile-card reveal-section">
+                    <h2 class="text-3xl font-bold text-blue-400 mb-5 border-b-4 border-blue-600 pb-3">Let's Connect!</h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        I'm always open to discussing new opportunities, collaborations, or just sharing insights. Feel free to reach out!
+                    </p>
+                    <div class="space-y-4">
+                        <p class="text-lg text-gray-300 flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13h9a2 2 0 002-2V7a2 2 0 00-2-2H3a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            Email: <a href="mailto:Vedant.Bajaj@UTDallas.edu" class="hover:underline text-blue-400 ml-2">Vedant.Bajaj@UTDallas.edu</a>
+                        </p>
+                        <p class="text-lg text-gray-300 flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-blue-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.3 14.8c-.3-.2-.7-.3-1.1-.3-.6 0-1.1.2-1.5.5-.4.3-.6.7-.6 1.3 0 .4.1.7.3.9.2.2.4.3.7.3h.2c.4 0 .7-.1.9-.3.2-.2.3-.5.3-.9 0-.3-.1-.6-.2-.8zm-.3-4.3c-.6 0-1.1.1-1.6.4-.5.3-.8.7-.8 1.4 0 .5.1.9.4 1.2.2.3.6.5.9.5.4 0 .7-.1.9-.3.2-.2.3-.5.3-.9 0-.6-.2-1.1-.5-1.4-.4-.3-.9-.4-1.3-.4zm3.6 7.4h-2.1v-3.7c0-.9-.2-1.5-.7-1.9-.5-.4-1.1-.6-1.9-.6-.8 0-1.4.2-1.9.7-.5.4-.7.9-.7 1.6v3.7h-2.1v-6.9h2.1v1c.3-.5.7-.9 1.3-1.2.6-.3 1.2-.5 1.9-.5.7 0 1.3.1 1.9.4.6.3 1.1.7 1.4 1.2.3.5.5 1.1.5 1.8v5.2zM8.3 8.3h-2.1v6.9h2.1v-6.9zm-1.1-1.1c.4 0 .7-.1.9-.3.2-.2.3-.5.3-.9 0-.4-.1-.7-.3-.9-.2-.2-.5-.3-.9-.3-.4 0-.7.1-.9.3-.2.2-.3.5-.3.9 0 .4.1.7.3.9.2.2.5.3.9.3zM22 12c0-5.5-4.5-10-10-10S2 6.5 2 12s4.5 10 10 10 10-4.5 10-10zM12 4c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8z"></path></svg>
+                            LinkedIn: <a href="www.linkedin.com/in/vedant-bajaj99" target="_blank" rel="noopener noreferrer" class="hover:underline text-blue-400 ml-2">linkedin.com/in/vedant-bajaj99</a>
+                        </p>
+                        <p class="text-lg text-gray-300 flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Location: Dallas, TX
+                        </p>
+                    </div>
                 </section>
             </div>
         </main>
 
         <footer class="mt-10 bg-gray-900 text-white rounded-2xl p-6 text-center shadow-lg">
             <p class="text-lg">&copy; 2025 Vedant Bajaj. All rights reserved.</p>
-            <p class="text-md mt-3">Connect with me: <a href="https://www.linkedin.com/in/vedant-bajaj99" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-200 transition duration-300 hover:underline">LinkedIn</a> | <a href="mailto:Vedant.Bajaj@UTDallas.edu" class="text-blue-400 hover:text-blue-200 transition duration-300 hover:underline">Email</a></p>
+            <p class="text-md mt-3">Crafted with ❤️ by Vedant Bajaj.</p>
         </footer>
     </div>
+
+    <script>
+        // JavaScript for scroll-reveal animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.reveal-section');
+            const skillTags = document.querySelectorAll('.skill-tag');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% of section visible
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // Trigger skill tag animations when their parent section is visible
+            const skillSection = document.getElementById('skills');
+            const skillObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        skillTags.forEach((tag, index) => {
+                            // Apply animation by removing and re-adding class or setting style
+                            // Using a direct style modification for simplicity here to trigger animation
+                            // The CSS animation-delay handles the staggered effect
+                            tag.style.opacity = 1; // Make visible
+                            tag.style.transform = 'scale(1)'; // Ensure scale is 1
+                        });
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            });
+
+            if (skillSection) {
+                skillObserver.observe(skillSection);
+            }
+        });
+    </script>
 </body>
 </html>
