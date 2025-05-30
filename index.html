@@ -7,41 +7,41 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Base styles for the dark theme from the current Canvas */
+        /* Base styles for the white and maroon theme */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Dark background similar to examples */
+            background-color: #F8F8F8; /* Light off-white background */
             line-height: 1.6;
-            color: #e2e8f0; /* Light text for contrast */
+            color: #333333; /* Dark text for readability */
             scroll-behavior: smooth; /* Smooth scrolling for nav links */
         }
-        /* Custom scrollbar from the current Canvas */
+        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #2d3748;
+            background: #E0E0E0; /* Lighter track */
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #4a5568;
+            background: #A52A2A; /* Maroon thumb */
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
+            background: #800000; /* Darker maroon on hover */
         }
 
-        /* Gradient for prominent text/buttons from the current Canvas */
+        /* Gradient for prominent text/buttons */
         .gradient-bg {
-            background: linear-gradient(to right, #6366f1, #3b82f6); /* Slightly adjusted gradient */
+            background: linear-gradient(to right, #800000, #A52A2A); /* Maroon gradient */
         }
         .gradient-text {
-            background: linear-gradient(to right, #6366f1, #3b82f6);
+            background: linear-gradient(to right, #800000, #A52A2A); /* Maroon gradient */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Section Reveal Animation from the current Canvas */
+        /* Section Reveal Animation */
         .reveal-section {
             opacity: 0;
             transform: translateY(20px);
@@ -52,27 +52,27 @@
             transform: translateY(0);
         }
 
-        /* Card-like styling for sections from the current Canvas */
+        /* Card-like styling for sections */
         .profile-card {
-            background-color: #2d3748; /* Darker card background */
+            background-color: #FFFFFF; /* White card background */
             border-radius: 1rem; /* rounded-2xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1); /* Darker shadow */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow */
             padding: 2.5rem; /* p-10 */
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border: 1px solid #4a5568; /* Subtle border */
+            border: 1px solid #D1D5DB; /* Light gray border */
         }
         .profile-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.06);
         }
 
-        /* Skill tag animations from the current Canvas */
+        /* Skill tag animations */
         .skill-tag {
             transition: all 0.3s ease;
             animation: fadeInScale 0.5s ease-out forwards; /* Apply animation */
             opacity: 0; /* Start hidden for fade-in */
-            background: #4f46e5; /* Default background from vedant_portfolio.html */
-            color: white;
+            background: #FEE2E2; /* Light pink/red background */
+            color: #800000; /* Maroon text */
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -80,10 +80,10 @@
         }
         .skill-tag:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Keyframes for fade-in and scale animation from the current Canvas */
+        /* Keyframes for fade-in and scale animation */
         @keyframes fadeInScale {
             from {
                 opacity: 0;
@@ -125,16 +125,16 @@
         .skill-tag:nth-child(27) { animation-delay: 2.7s; }
         .skill-tag:nth-child(28) { animation-delay: 2.8s; }
 
-        /* Custom styling for navigation links to match examples from current Canvas */
+        /* Custom styling for navigation links */
         .nav-link {
-            color: #a0aec0; /* Lighter gray for nav links */
+            color: #333333; /* Dark text for nav links */
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
             padding-bottom: 0.25rem;
         }
         .nav-link:hover {
-            color: #6366f1; /* Purple on hover */
+            color: #800000; /* Maroon on hover */
         }
         .nav-link::after {
             content: '';
@@ -143,31 +143,31 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: #6366f1; /* Underline color */
+            background-color: #800000; /* Maroon underline */
             transition: width 0.3s ease-out;
         }
         .nav-link:hover::after {
             width: 100%;
         }
 
-        /* Styles from vedant_portfolio.html, adapted for dark theme */
+        /* General container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Hero Section - specific overrides for the combined look */
+        /* Hero Section */
         .hero {
             padding: 120px 0 80px;
             text-align: center;
-            color: white; /* Kept for hero text, but body is darker */
+            color: #333333; /* Dark text for hero */
         }
 
         .hero h1 {
-            font-size: 4.5rem; /* Adjusted for larger text */
+            font-size: 4.5rem;
             margin-bottom: 1rem;
-            color: white;
+            color: #333333; /* Dark text */
             font-weight: 900;
             letter-spacing: -2px;
         }
@@ -175,12 +175,12 @@
         .hero .subtitle {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            color: #e2e8f0; /* Adjusted for dark theme */
+            color: #555555; /* Slightly lighter dark text */
         }
 
         .cta-button {
             display: inline-block;
-            background: #4f46e5; /* Original button color */
+            background: #800000; /* Maroon button */
             color: white;
             padding: 1rem 2rem;
             text-decoration: none;
@@ -204,7 +204,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #blue-400; /* Adjusted for dark theme */
+            color: #800000; /* Maroon title */
         }
 
         /* Skills Grid */
@@ -226,7 +226,7 @@
         }
 
         .skill-category h3 {
-            color: #blue-400; /* Adjusted for dark theme */
+            color: #800000; /* Maroon heading */
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -251,7 +251,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: #6366f1; /* Adjusted for new gradient color */
+            background: #800000; /* Maroon timeline line */
             transform: translateX(-50%);
         }
 
@@ -278,10 +278,13 @@
             padding: 2rem;
             border-radius: 15px;
             position: relative;
+            background-color: #FFFFFF; /* White background for timeline cards */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+            border: 1px solid #D1D5DB; /* Light gray border */
         }
 
         .timeline-date {
-            color: #blue-400; /* Adjusted for dark theme */
+            color: #800000; /* Maroon date */
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
@@ -290,11 +293,11 @@
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            color: #e2e8f0; /* Adjusted for dark theme */
+            color: #333333; /* Dark text */
         }
 
         .timeline-company {
-            color: #a0aec0; /* Adjusted for dark theme */
+            color: #6B7280; /* Medium gray */
             font-weight: 600;
             margin-bottom: 1rem;
         }
@@ -311,6 +314,9 @@
             border-radius: 15px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #FFFFFF; /* White background for project cards */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+            border: 1px solid #D1D5DB; /* Light gray border */
         }
 
         .project-card:hover {
@@ -318,7 +324,7 @@
         }
 
         .project-header {
-            background: #6366f1; /* Adjusted for new gradient color */
+            background: #800000; /* Maroon header */
             color: white;
             padding: 1.5rem;
         }
@@ -331,7 +337,7 @@
 
         .project-content {
             padding: 1.5rem;
-            color: #e2e8f0; /* Adjusted for dark theme */
+            color: #333333; /* Dark text */
         }
 
         .project-tech {
@@ -342,8 +348,8 @@
         }
 
         .tech-tag {
-            background: #4a5568; /* Adjusted for dark theme */
-            color: white;
+            background: #E5E7EB; /* Light gray background */
+            color: #333333; /* Dark text */
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.8rem;
@@ -362,6 +368,9 @@
             padding: 2rem;
             border-radius: 15px;
             transition: transform 0.3s ease;
+            background-color: #FFFFFF; /* White background for contact cards */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+            border: 1px solid #D1D5DB; /* Light gray border */
         }
 
         .contact-item:hover {
@@ -371,14 +380,14 @@
         .contact-icon {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: #6366f1; /* Adjusted for new gradient color */
-            display: flex; /* Make it a flex container */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 2em; /* Give it some height for vertical centering */
+            color: #800000; /* Maroon icon */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2em;
         }
 
-        /* Animations from vedant_portfolio.html */
+        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -431,9 +440,9 @@
 </head>
 <body class="antialiased">
 
-    <nav class="sticky top-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-md shadow-lg py-4 px-6 md:px-10">
+    <nav class="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-md shadow-lg py-4 px-6 md:px-10">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#hero" class="text-3xl font-extrabold text-white">VB.</a> <div class="space-x-8 hidden md:flex items-center">
+            <a href="#hero" class="text-3xl font-extrabold text-gray-800">VB.</a> <div class="space-x-8 hidden md:flex items-center">
                 <a href="#about-section" class="nav-link">About</a>
                 <a href="#experience-section" class="nav-link">Experience</a>
                 <a href="#projects-section" class="nav-link">Projects</a>
@@ -441,7 +450,7 @@
                 <a href="#contact-section" class="nav-link">Contact</a>
                 <a href="https://www.linkedin.com/in/vedant-bajaj99" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
                 <a href="Vedant_Bajaj_resume.pdf" download="Vedant_Bajaj_resume.pdf"
-                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                   class="bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-5 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                     Resume
                 </a>
             </div>
@@ -451,12 +460,12 @@
     <div class="container mx-auto p-4 sm:p-6 lg:p-10">
 
         <section id="hero" class="text-center py-24 md:py-32 px-8 mb-20 reveal-section">
-            <p class="text-xl md:text-2xl text-blue-400 font-semibold mb-4">Hi, my name is</p>
-            <h1 class="text-6xl md:text-8xl font-extrabold text-white leading-tight mb-6">Vedant Bajaj.</h1>
+            <p class="text-xl md:text-2xl text-red-700 font-semibold mb-4">Hi, my name is</p>
+            <h1 class="text-6xl md:text-8xl font-extrabold text-gray-900 leading-tight mb-6">Vedant Bajaj.</h1>
             <p class="text-3xl md:text-4xl font-bold gradient-text max-w-4xl mx-auto mb-8">
                 I build intelligent systems for the web and beyond.
             </p>
-            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10">
+            <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-10">
                 I'm a Computer Engineering Master's student specializing in Machine Learning and AI, passionate about crafting robust software solutions and automating complex challenges.
             </p>
             <div class="flex flex-wrap justify-center gap-6">
@@ -472,8 +481,8 @@
 
         <section id="about-section" class="section profile-card reveal-section mb-20">
             <div class="container">
-                <h2 class="section-title text-blue-400">About Me</h2>
-                <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;" class="text-gray-300">
+                <h2 class="section-title text-red-700">About Me</h2>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;" class="text-gray-700">
                     <p>Greetings! I'm Vedant Bajaj, a Master's student in Computer Engineering at the University of Texas at Dallas. My academic journey began with a Bachelor of Technology in Computer Engineering from the University of Pune. I'm driven by a profound interest in how technology can simplify, automate, and enhance our lives.</p>
                     <br>
                     <p>My professional experience as a Software Engineer has equipped me with practical skills in Machine Learning, AI, and robust backend development. I've had the privilege of working on projects that involve automating document processing, building speech-to-text systems, and optimizing database performance. I believe in crafting intelligent solutions that not only solve complex problems but also deliver tangible value.</p>
@@ -485,10 +494,10 @@
 
         <section id="skills-section" class="section profile-card reveal-section mb-20">
             <div class="container">
-                <h2 class="section-title text-blue-400">Technical Skills</h2>
+                <h2 class="section-title text-red-700">Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3 class="text-white">Programming Languages</h3>
+                        <h3 class="text-red-700">Programming Languages</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">C++</span>
@@ -497,7 +506,7 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3 class="text-white">Machine Learning & AI</h3>
+                        <h3 class="text-red-700">Machine Learning & AI</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">TensorFlow</span>
                             <span class="skill-tag">Scikit-learn</span>
@@ -512,7 +521,7 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3 class="text-white">Software Development</h3>
+                        <h3 class="text-red-700">Software Development</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Object-Oriented Design</span>
                             <span class="skill-tag">REST APIs</span>
@@ -522,7 +531,7 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3 class="text-white">Web Development</h3>
+                        <h3 class="text-red-700">Web Development</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Django</span>
                             <span class="skill-tag">API Development</span>
@@ -534,7 +543,7 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3 class="text-white">Database Management</h3>
+                        <h3 class="text-red-700">Database Management</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">MySQL</span>
                             <span class="skill-tag">SQL Server</span>
@@ -546,17 +555,17 @@
 
         <section id="experience-section" class="section reveal-section mb-20">
             <div class="container">
-                <h2 class="section-title text-blue-400">Professional Experience</h2>
+                <h2 class="section-title text-red-700">Professional Experience</h2>
                 <div class="timeline">
                     <div class="timeline-item reveal-section">
-                        <div class="timeline-content profile-card">
-                            <div class="timeline-date text-blue-400">Nov 2022 – Sep 2023</div>
-                            <h3 class="timeline-title text-white">Software Engineer</h3>
-                            <div class="timeline-company text-gray-400">Rabbit and Tortoise Technology, India</div>
-                            <p class="text-lg text-gray-300 leading-relaxed mb-3">
+                        <div class="timeline-content">
+                            <div class="timeline-date text-red-700">Nov 2022 – Sep 2023</div>
+                            <h3 class="timeline-title text-gray-900">Software Engineer</h3>
+                            <div class="timeline-company text-gray-600">Rabbit and Tortoise Technology, India</div>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-3">
                                 At Rabbit and Tortoise Technology, I gained hands-on experience in developing intelligent systems that streamlined operations and improved data accuracy. My roles involved leveraging advanced technologies to build robust and efficient software solutions.
                             </p>
-                            <ul style="margin-top: 1rem; text-align: left;" class="text-gray-300 list-disc list-inside">
+                            <ul style="margin-top: 1rem; text-align: left;" class="text-gray-700 list-disc list-inside">
                                 <li>Automated Document Processing System: Implemented an OCR pipeline using Python, OpenCV, and PyTesseract, achieving 95% text detection accuracy and reducing manual processing time by 50%. Applied advanced image preprocessing, reducing noise by 90% and improving text extraction efficiency.</li>
                                 <li>Intelligent Speech-to-Text Grocery Management System: Developed an end-to-end speech recognition system using Google Speech-to-Text API and Python, achieving 98% transcription accuracy. Engineered regex-based text processing system to extract items, quantities, and prices from transcribed text, automatically generating structured shopping lists with 95% accuracy.</li>
                             </ul>
@@ -564,14 +573,14 @@
                     </div>
 
                     <div class="timeline-item reveal-section">
-                        <div class="timeline-content profile-card">
-                            <div class="timeline-date text-blue-400">Aug 2021 – Dec 2021</div>
-                            <h3 class="timeline-title text-white">Software Engineer Intern</h3>
-                            <div class="timeline-company text-gray-400">Bizsol IT Services, India</div>
-                            <p class="text-lg text-gray-300 leading-relaxed mb-3">
+                        <div class="timeline-content">
+                            <div class="timeline-date text-red-700">Aug 2021 – Dec 2021</div>
+                            <h3 class="timeline-title text-gray-900">Software Engineer Intern</h3>
+                            <div class="timeline-company text-gray-600">Bizsol IT Services, India</div>
+                            <p class="text-lg text-gray-700 leading-relaxed mb-3">
                                 During my internship at Bizsol IT Services, I focused on data integration and visualization, contributing to systems that significantly cut down manual effort and enhanced business intelligence.
                             </p>
-                            <ul style="margin-top: 1rem; text-align: left;" class="text-gray-300 list-disc list-inside">
+                            <ul style="margin-top: 1rem; text-align: left;" class="text-gray-700 list-disc list-inside">
                                 <li>Developed a SQL Server-based data integration system, reducing manual reconciliation time by 60%.</li>
                                 <li>Optimized database queries and implemented indexing strategies, improving query performance by 40%.</li>
                                 <li>Created interactive dashboards for data visualization, enhancing business intelligence capabilities.</li>
@@ -584,7 +593,7 @@
 
         <section id="projects-section" class="section profile-card reveal-section mb-20">
             <div class="container">
-                <h2 class="section-title text-blue-400">Featured Projects</h2>
+                <h2 class="section-title text-red-700">Featured Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card reveal-section">
                         <div class="project-header gradient-bg">
@@ -639,65 +648,65 @@
 
         <section id="education-section" class="section profile-card reveal-section mb-20">
             <div class="container">
-                <h2 class="section-title text-blue-400">Education</h2>
-                <div class="mb-6 pb-4 border-b border-gray-600 last:border-b-0">
-                    <h3 class="text-xl font-semibold text-white">Master of Science in Computer Engineering</h3>
-                    <p class="text-md text-gray-400">University of Texas at Dallas | Aug 2024 - May 2026</p>
-                    <p class="text-md text-gray-300">GPA: 3.6</p>
-                    <p class="text-md text-gray-300">Coursework: Machine Learning, Statistical Methods in ML/AI, Applied Data Structures and Algorithms</p>
+                <h2 class="section-title text-red-700">Education</h2>
+                <div class="mb-6 pb-4 border-b border-gray-300 last:border-b-0">
+                    <h3 class="text-xl font-semibold text-gray-900">Master of Science in Computer Engineering</h3>
+                    <p class="text-md text-gray-600">University of Texas at Dallas | Aug 2024 - May 2026</p>
+                    <p class="text-md text-gray-700">GPA: 3.6</p>
+                    <p class="text-md text-gray-700">Coursework: Machine Learning, Statistical Methods in ML/AI, Applied Data Structures and Algorithms</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-white">Bachelor of Technology in Computer Engineering</h3>
-                    <p class="text-md text-gray-400">University of Pune | Aug 2018 - May 2022</p>
-                    <p class="text-md text-gray-300">GPA: 3.7</p>
-                    <p class="text-md text-gray-300">Coursework: Data Structures and Algorithms, Object Oriented Programming, Database System, Machine Learning</p>
+                    <h3 class="text-xl font-semibold text-gray-900">Bachelor of Technology in Computer Engineering</h3>
+                    <p class="text-md text-gray-600">University of Pune | Aug 2018 - May 2022</p>
+                    <p class="text-md text-gray-700">GPA: 3.7</p>
+                    <p class="text-md text-gray-700">Coursework: Data Structures and Algorithms, Object Oriented Programming, Database System, Machine Learning</p>
                 </div>
             </div>
         </section>
 
         <section id="contact-section" class="section profile-card reveal-section mb-20">
             <div class="container">
-                <h2 class="section-title text-blue-400">Let's Connect</h2>
+                <h2 class="section-title text-red-700">Let's Connect</h2>
                 <div class="contact-grid">
                     <div class="contact-item profile-card">
                         <div class="contact-icon">📧</div>
-                        <h3 class="text-white">Email</h3>
-                        <p class="text-gray-300">Vedant.Bajaj@UTDallas.edu</p>
+                        <h3 class="text-gray-900">Email</h3>
+                        <p class="text-gray-700">Vedant.Bajaj@UTDallas.edu</p>
                     </div>
 
                     <div class="contact-item profile-card">
                         <div class="contact-icon">📞</div>
-                        <h3 class="text-white">Phone</h3>
-                        <p class="text-gray-300">(945) 291-0320</p>
+                        <h3 class="text-gray-900">Phone</h3>
+                        <p class="text-gray-700">(945) 291-0320</p>
                     </div>
 
                     <div class="contact-item profile-card">
                         <div class="contact-icon">
-                            <svg style="width: 32px; height: 32px;" viewBox="0 0 24 24" fill="#6366f1">
+                            <svg style="width: 32px; height: 32px;" viewBox="0 0 24 24" fill="#800000">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
                         </div>
-                        <h3 class="text-white">LinkedIn</h3>
-                        <p class="text-gray-300"><a href="https://www.linkedin.com/in/vedant-bajaj99" target="_blank" class="text-blue-400 hover:underline">vedant-bajaj99</a></p>
+                        <h3 class="text-gray-900">LinkedIn</h3>
+                        <p class="text-gray-700"><a href="https://www.linkedin.com/in/vedant-bajaj99" target="_blank" class="text-red-700 hover:underline">vedant-bajaj99</a></p>
                     </div>
 
                     <div class="contact-item profile-card">
                         <div class="contact-icon">📍</div>
-                        <h3 class="text-white">Location</h3>
-                        <p class="text-gray-300">Dallas, TX</p>
+                        <h3 class="text-gray-900">Location</h3>
+                        <p class="text-gray-700">Dallas, TX</p>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <footer class="mt-10 bg-gray-900 text-white rounded-2xl p-6 text-center shadow-lg">
+    <footer class="mt-10 bg-red-700 text-white rounded-2xl p-6 text-center shadow-lg">
         <p class="text-lg">&copy; 2025 Vedant Bajaj. All rights reserved.</p>
         <p class="text-md mt-3">Crafted with ❤️ by Vedant Bajaj.</p>
     </footer>
 
     <script>
-        // JavaScript for scroll-reveal animations (adapted from current Canvas)
+        // JavaScript for scroll-reveal animations
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('.reveal-section');
             const skillTags = document.querySelectorAll('.skill-tag');
@@ -722,7 +731,7 @@
             });
 
             // Trigger skill tag animations when their parent section is visible
-            const skillSection = document.getElementById('skills-section'); // Updated ID
+            const skillSection = document.getElementById('skills-section');
             const skillObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -743,7 +752,7 @@
                 skillObserver.observe(skillSection);
             }
 
-            // Smooth scrolling for navigation links (from vedant_portfolio.html)
+            // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -757,16 +766,15 @@
                 });
             });
 
-            // Add active state to navigation (from vedant_portfolio.html)
+            // Add active state to navigation
             window.addEventListener('scroll', () => {
                 const sections = document.querySelectorAll('section');
-                const navLinks = document.querySelectorAll('.nav-link'); // Changed to nav-link class
+                const navLinks = document.querySelectorAll('.nav-link');
 
                 let current = '';
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.clientHeight;
-                    // Adjusted offset for sticky nav
                     if (pageYOffset >= sectionTop - 100) {
                         current = section.getAttribute('id');
                     }
@@ -774,30 +782,29 @@
 
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    // Match href with section ID, removing '-section' for nav links
                     if (link.getAttribute('href') === `#${current}`) {
                         link.classList.add('active');
                     }
                 });
             });
 
-            // Add some interactive elements (from vedant_portfolio.html, adapted)
-            document.querySelectorAll('.profile-card').forEach(card => { // Changed selector to profile-card
+            // Add some interactive elements
+            document.querySelectorAll('.profile-card').forEach(card => {
                 card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px) scale(1.02)'; // Adapted values
-                    this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1)';
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                    this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.06)';
                 });
 
                 card.addEventListener('mouseleave', function() {
                     this.style.transform = 'translateY(0) scale(1)';
-                    this.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1)';
+                    this.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
                 });
             });
 
-            // Resume download function (adapted from vedant_portfolio.html)
+            // Resume download function
             function downloadResume() {
                 const link = document.createElement('a');
-                link.href = 'Vedant_Bajaj_resume.pdf'; // Direct link to uploaded PDF
+                link.href = 'Vedant_Bajaj_resume.pdf';
                 link.download = 'Vedant_Bajaj_Resume.pdf';
                 document.body.appendChild(link);
                 link.click();
